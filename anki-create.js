@@ -73,6 +73,10 @@
               hoverTooltip.parentNode.removeChild(hoverTooltip)
             }
             if (hoverSpan) {
+              const hoverContentEle = hoverSpan.querySelector('.tt')
+              if (hoverContentEle) {
+                content.removeChild(hoverContentEle)
+              }
               const content = hoverSpan.textContent.replace(/\./g, '')
               const wrapper = `<a ${encodeURI(
                 `href=dict://${content}`

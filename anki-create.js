@@ -68,13 +68,14 @@
             const lln_subs = document.getElementById('lln-subs')
             const lln_translation = document.getElementById('lln-translations')
             const hoverSpan = document.querySelector('#lln-subs > span:hover')
+            console.log('hoverSpan', hoverSpan, !!hoverSpan)
             if (hoverSpan) {
               const hoverContentEle = hoverSpan.querySelector('.tt')
-              console.log(hoverContentEle.innerText)
+              console.log('innerText', hoverContentEle.innerText)
               const content = hoverSpan.innerText
                 .replace(hoverContentEle.innerText, '')
                 .replace(/\./g, '')
-              console.log(content)
+              console.log('innerContent', content)
               const wrapper = `<a ${encodeURI(
                 `href=dict://${content}`
               )}><u>${content}</u></a>`

@@ -67,17 +67,12 @@
           if (e.key === 'A') {
             const lln_subs = document.getElementById('lln-subs')
             const lln_translation = document.getElementById('lln-translations')
-            const hoverTooltip = document.querySelector('span.tt.hoverable')
             const hoverSpan = document.querySelector('#lln-subs > span:hover')
-            if (hoverTooltip) {
-              hoverTooltip.parentNode.removeChild(hoverTooltip)
-            }
             if (hoverSpan) {
               const hoverContentEle = hoverSpan.querySelector('.tt')
-              if (hoverContentEle) {
-                content.removeChild(hoverContentEle)
-              }
-              const content = hoverSpan.textContent.replace(/\./g, '')
+              const content = hoverSpan.innerText
+                .replace(hoverContentEle.innerText, '')
+                .replace(/\./g, '')
               const wrapper = `<a ${encodeURI(
                 `href=dict://${content}`
               )}><u>${content}</u></a>`

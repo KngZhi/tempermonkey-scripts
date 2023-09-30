@@ -75,7 +75,7 @@
             if (hoverSpan) {
               const content = hoverSpan.textContent.replace(/\./g, '')
               const wrapper = `<a ${encodeURI(
-                `href="dict://${content}"`
+                `href=dict://${content}`
               )}><u>${content}</u></a>`
               hoverSpan.textContent = wrapper
             }

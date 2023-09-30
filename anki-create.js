@@ -70,9 +70,11 @@
             const hoverSpan = document.querySelector('#lln-subs > span:hover')
             if (hoverSpan) {
               const hoverContentEle = hoverSpan.querySelector('.tt')
+              console.log(hoverContentEle.innerText)
               const content = hoverSpan.innerText
                 .replace(hoverContentEle.innerText, '')
                 .replace(/\./g, '')
+              console.log(content)
               const wrapper = `<a ${encodeURI(
                 `href=dict://${content}`
               )}><u>${content}</u></a>`
